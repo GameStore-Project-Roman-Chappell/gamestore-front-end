@@ -4,7 +4,7 @@ export default function Navbar() {
     return (
         <div className="navbar">
             <h1>GameShock</h1>
-            <a href="/employee">Employee Login</a>
+            <a href="/employee" className="employeeLink">Employee Login</a>
 
         </div>
         )
