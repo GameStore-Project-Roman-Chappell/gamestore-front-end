@@ -78,3 +78,23 @@
     margin-right: 15px;
     margin-top: 10px;
 }
+
+.restockForm {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.itemSelect {
+    margin-right: 35px;
+}
+
+.restockForm a {
+    text-decoration: none;
+    color: white;
+    text-decoration: underline;
+    margin-top: 20px;
+}
