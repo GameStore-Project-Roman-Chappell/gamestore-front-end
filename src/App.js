@@ -1,5 +1,6 @@
 import "./gamestore.css";
 import Navbar from "./components/Navbar";
+import Shop from "./components/Shop";
 import Restock from "./components/Restock";
 import {BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -9,8 +10,8 @@ function App() {
       <Navbar />
       <Router>
       <Routes>
-
-        <Route exact path='/employee' component={Restock}/>
+        <Route exact path='/' element={<Shop />}/>
+        <Route exact path='/employee' element={<Restock />}/>
       </Routes>
       </Router>
     </div>
