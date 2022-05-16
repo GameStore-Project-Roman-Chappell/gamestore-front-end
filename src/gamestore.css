@@ -11,8 +11,12 @@
     top: 0;
 }
 
-.navbar h1 {
+.headerTitle {
     margin-left: 20px;
+    text-decoration: none;
+    color:white;
+    font-size: xx-large;
+    font-weight: bolder;
 }
 
 .employeeLink {

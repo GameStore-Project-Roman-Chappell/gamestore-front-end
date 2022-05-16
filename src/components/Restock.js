@@ -1,7 +1,7 @@
 import React, { setState, useState, Component } from "react";
-import GameRestock from "./GameRestock";
-import ConsoleRestock from "./ConsoleRestock";
-import ShirtRestock from "./ShirtRestock";
+import GameRestock from "./Restock/GameRestock";
+import ConsoleRestock from "./Restock/ConsoleRestock";
+import ShirtRestock from "./Restock/ShirtRestock";
 
 export default function Restock() {
  

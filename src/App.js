@@ -2,9 +2,9 @@ import "./gamestore.css";
 import Navbar from "./components/Navbar";
 import Shop from "./components/Shop";
 import Restock from "./components/Restock";
-import GameOrder from "./components/GameOrder";
-import ConsoleOrder from "./components/ConsoleOrder";
-import ShirtOrder from "./components/ShirtOrder";
+import GameOrder from "./components/OrderForms/GameOrder";
+import ConsoleOrder from "./components/OrderForms/ConsoleOrder";
+import ShirtOrder from "./components/OrderForms/ShirtOrder";
 import {BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
