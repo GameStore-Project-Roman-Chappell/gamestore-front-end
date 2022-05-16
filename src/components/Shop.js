@@ -22,7 +22,7 @@ export default function Shop() {
 
 
       <div className='popular'>
-        <p className='popularTitle'>Popular Games</p>
+        <a href="/gameOrder" className='popularTitle'>Popular Games</a>
         <div className='popularGames'>
           <img alt='Gta cover art' src={GtaV}></img>
           <img alt='Horizon cover art' src={Horizon}></img>
@@ -34,7 +34,7 @@ export default function Shop() {
       </div>
 
     <div className="consoles">
-        <p className="consoleTitle">Consoles</p>
+        <a href="consoleOrder" className="consoleTitle">Consoles</a>
         <div className="consolesSale">
             <img alt="Xbox Series X" src={XboxX}></img>
             <img alt="PS5 Console" src={Ps5}></img>
@@ -43,7 +43,7 @@ export default function Shop() {
     </div>
 
     <div className="shirts">
-        <p className='shirtTitle'>T-Shirts</p>
+        <a href="shirtOrder" className='shirtTitle'>T-Shirts</a>
         <div className="shirtSale">
             <img alt="Kingdom Hearts Shirt" src={kingdomShirt}></img>
             <img alt="Fortnite Shirt" src={fortniteShirt}></img>
