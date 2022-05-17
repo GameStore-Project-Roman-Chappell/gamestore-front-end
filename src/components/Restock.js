@@ -14,6 +14,7 @@ export default function Restock() {
     <ShirtRestock />
 
       <a href='/'>Back to Home</a>
+      <a href="/inventory">Inventory</a>
     </div>
   );
 }

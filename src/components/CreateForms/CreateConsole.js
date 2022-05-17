@@ -12,6 +12,7 @@ export default function CreateConsole({ consoleB: initialConsole, notify }) {
 
     function handleSubmit(event) {
         event.preventDefault();
+        console.log(consoleB);
 
         const url = isAdd ? "http://localhost:8080/consoles" : `http://localhost:8080/consoles/${consoleB.id}`;
         const method = isAdd ? "POST" : "PUT";
@@ -54,7 +55,7 @@ export default function CreateConsole({ consoleB: initialConsole, notify }) {
 
                     <label className="ManufacturerInput">
                         Manufacturer: 
-                        <intput type="text" name="manufacturer" value={consoleB.manufacturer} onChange={handleChange}></intput>
+                        <input type="text" name="manufacturer" value={consoleB.manufacturer} onChange={handleChange}></input>
                     </label>
 
                     <label className="memoryAmountInput">
@@ -73,10 +74,10 @@ export default function CreateConsole({ consoleB: initialConsole, notify }) {
                     </label>
 
                     <label className="quantity">
-                        Price: 
-                        <input type="text" name="price" value={consoleB.price} onChange={handleChange}></input>
+                        Quantity: 
+                        <input type="text" name="quantity" value={consoleB.quantity} onChange={handleChange}></input>
                     </label>
-
+                    <input type='submit' value='Submit' />
             </form>
         </div>
     )

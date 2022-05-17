@@ -16,8 +16,7 @@ export default function ConsoleOrder() {
     useEffect(() => {
         fetch("http://localhost:8080/consoles")
         .then(response => response.json())
-        .then(result => setConsoleInventory(result))
-        .then(console.log(consoleInventory))
+        .then(result => setConsoleInventory(result), console.log(consoleInventory))
         .catch(console.log);
     }, []);
 
@@ -63,8 +62,8 @@ export default function ConsoleOrder() {
             <form className="consoleOrderForm" onSubmit={handleSubmit}>
                 <label className="consoleOrderFormSelect">
                     <select value={consoleB} onChange={(e) => setConsoleB(e.target.value)}>
-                        {consoleInventory.map((consoleOption) => <option key={consoleOption.data.name}>
-                            {consoleOption.data.name}
+                        {consoleInventory.map((consoleOption) => <option key={consoleOption.model}>
+                            {consoleOption.model}
                         </option>)}
                     </select>
                 </label>
