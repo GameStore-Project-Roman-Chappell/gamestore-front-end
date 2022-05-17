@@ -17,6 +17,7 @@ export default function ConsoleOrder() {
         fetch("http://localhost:8080/consoles")
         .then(response => response.json())
         .then(result => setConsoleInventory(result))
+        .then(console.log(consoleInventory))
         .catch(console.log);
     }, []);
 
