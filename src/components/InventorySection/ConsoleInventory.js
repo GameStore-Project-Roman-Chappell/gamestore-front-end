@@ -14,7 +14,7 @@ export default function ConsoleInventory() {
         .then(response => response.json())
         .then(result => SetConsoles(result), console.log(consoles))
         .catch(console.log);
-    }, [consoles]);
+    }, []);
 
     function addClick() {
         SetScopedConsole({ id: 0, model: "", manufacturer: "", memoryAmount: "", processor: "", price: 0, quantity: 0 });
