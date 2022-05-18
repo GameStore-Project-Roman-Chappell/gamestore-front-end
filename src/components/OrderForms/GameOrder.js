@@ -18,7 +18,7 @@ export default function GameOrder() {
     useEffect(() => {
         fetch("http://localhost:8080/games")
         .then(response => response.json())
-        .then(result => setGameInventory(result))
+        .then(result => setGameInventory(result), console.log(gameInventory))
         .catch(console.log);
     }, []);
 
@@ -26,6 +26,7 @@ export default function GameOrder() {
         let obj = event.target.value;
         let objInt = parseInt(obj);
         setGameId(objInt);
+        console.log(gameId);
     }
 
     const handleSubmit = (event) => {
@@ -42,6 +43,7 @@ export default function GameOrder() {
         }
         setGameOrder(orderInfo);
         console.log("submitting game order");
+        console.log(orderInfo);
 
         const url = "http://localhost:8080/purchase"
         const method = "POST";
@@ -68,19 +70,46 @@ export default function GameOrder() {
         console.log(invoice);
     }
     if (successful) {
-        alert("Your purchase was successful");
+        setSuccessful(false);
+        alert("Your purchase was successful"); 
     }
 
     return (
         <div className="gameOrder">
             <form className="gameOrderForm" onSubmit={handleSubmit}>
                 <label className="gameOrderSelect">
-                    <select value={game} onChange={(e) => setGame(e.target.value)}>
-                    {gameInventory.map((gameOption) => <option key={gameOption.name}>
-                        {gameOption.data.name}
-                    </option>)}
 
+                    <select onChange={handleChange}>
+                    {gameInventory.map((gameOption) => <option key={gameOption.id} id={gameOption.id} value={gameOption.id}>
+                        {gameOption.title}
+                    </option>)}
                     </select>
+
+                <label className="orderName">
+                    Name:
+                <input type="text" name="orderName" value={name} onChange={(e) => setName(e.target.value)}/>
+                </label>
+                <label className="orderStreet">
+                    Street: 
+                <input type="text" name="orderStreet" value={street}  onChange={(e) => setStreet(e.target.value)}  />
+                </label>
+                <label className="orderCity">
+                    City: 
+                <input type="text" name="orderCity" value={city}  onChange={(e) => setCity(e.target.value)}  />
+                </label>
+                <label className="orderState">
+                    State: 
+                <input type="text" name="orderState" value={state2}  onChange={(e) => setState2(e.target.value)}  />
+                </label>
+                <label className="orderZip">
+                    Zipcode: 
+                <input type="text" name="orderZip" value={zipcode}  onChange={(e) => setZipcode(e.target.value)}  />
+                </label>
+                <label className="orderQuantity">
+                    Quantity: 
+                <input type="text" name="orderQuantity" value={quantity}  onChange={(e) => setQuantity(e.target.value)}  />
+                </label>
+
                 </label>
                 <input type='submit' value='Submit' />
             </form>
