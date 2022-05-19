@@ -17,6 +17,7 @@ export default function GameSearch() {
 
   return (
     <div className='searchSection'>
+        <p className="searchTitle">Search for Games</p>
       <form className='searchForm' onSubmit={handleSubmit}>
         <label className='ParamTypeSelect'>
           <select onChange={(e) => setParamType(e.target.value)}>

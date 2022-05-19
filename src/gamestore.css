@@ -145,16 +145,17 @@
 
 .orderForm label {
     margin-bottom: 10px;
-    /* width: 50%; */
+    width: 50%;
 }
 
+/* Search Section */
+
+.searchTitle {
+    font-size: x-large;
+}
 
 .searchSection {
     margin-top: 50px;
+    
 }
 
-
-
-.gameInventory {
-    margin-top: 20px;
-}

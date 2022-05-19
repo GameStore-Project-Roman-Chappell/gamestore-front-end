@@ -145,8 +145,6 @@ export default function ConsoleOrder() {
       </form>
 
       <ConsoleSearch />
-
-      <a href='/'>Back to Home</a>
     </div>
   );
 }

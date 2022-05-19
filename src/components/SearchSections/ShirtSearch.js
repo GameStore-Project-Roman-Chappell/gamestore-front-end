@@ -17,6 +17,7 @@ export default function ShirtSearch() {
 
   return (
     <div className='searchSection'>
+        <p classname="searchTitle">Search for Shirts</p>
       <form className='searchForm' onSubmit={handleSubmit}>
         <label className='ParamTypeSelect'>
           <select onChange={(e) => setParamType(e.target.value)}>
