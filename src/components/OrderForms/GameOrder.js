@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import GameSearch from '../SearchSections/GameSearch';
 
 export default function GameOrder() {
     const [gameInventory, setGameInventory] = useState([]);
@@ -45,7 +46,7 @@ export default function GameOrder() {
         console.log("submitting game order");
         console.log(orderInfo);
 
-        const url = "http://localhost:8080/purchase"
+        const url = "http://localhost:8080/purchase";
         const method = "POST";
         const expectedStatus = 200;
         const init = {
@@ -113,6 +114,8 @@ export default function GameOrder() {
                 </label>
                 <input type='submit' value='Submit' />
             </form>
+
+            <GameSearch />
             
         </div>
     )

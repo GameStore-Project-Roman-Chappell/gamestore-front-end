@@ -46,7 +46,7 @@ export default function ConsoleOrder() {
         console.log(consoleId);
         console.log(orderInfo);
 
-        const url = "http://localhost:8080/purchase"
+        const url = "http://localhost:8080/purchase";
         const method = "POST";
         const expectedStatus = 200;
         const init = {

@@ -19,7 +19,7 @@ function App() {
         <Route exact path='/gameOrder' element={<GameOrder />}/>
         <Route exact path='/consoleOrder' element={<ConsoleOrder />}/>
         <Route exact path='/shirtOrder' element={<ShirtOrder />}/>
-        <Route exact path='/createConsole' element={<CreateConsole />}/>
+       
 
       </Routes>
       </Router>

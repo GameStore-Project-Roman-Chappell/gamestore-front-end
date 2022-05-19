@@ -8,12 +8,17 @@ export default function GameInventory() {
     const [scopedGame, setScopedGame] = useState({});
     const [error, setError] = useState();
 
+    
+    const url=`http://localHost:8080/games`;
+
     useEffect(() => {
-        fetch("http://localHost:8080/games")
+        fetch(url)
         .then(response => response.json())
         .then(result => setGames(result), console.log(games))
         .catch(console.log);
     }, []);
+
+    
 
     function addClick() {
         setScopedGame({ id: 0, title: "", esrbRating: "", description: "", studio: "", price: 0, quantity: 0 });
@@ -60,6 +65,7 @@ export default function GameInventory() {
             <div>
                 <h1 className="gamesTitle">Games</h1>
                     <button className="btn btn-primary" type="button" onClick={addClick}>Add a Game</button>
+
                     <table id="games">
                         <tr>
                             <th>Title</th>
