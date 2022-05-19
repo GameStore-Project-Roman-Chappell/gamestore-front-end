@@ -30,9 +30,14 @@
     margin-top: 15px;
 }
 
-.popularTitle {
+.popular {
     text-align: center;
     font-size: xx-large;
+}
+
+.popularTitle {
+    text-decoration: none;
+    color: white;
 }
 
 
@@ -42,6 +47,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    margin-top: 10px;
 }
 
 .popularGames img {
@@ -54,6 +60,15 @@
 .consoles {
     text-align: center;
     font-size: xx-large;
+}
+
+.consoleTitle {
+    text-decoration: none;
+    color: white;
+}
+
+.consolesSale {
+    margin-top: 10px;
 }
 
 .consolesSale img {
@@ -101,4 +116,8 @@
     color: white;
     text-decoration: underline;
     margin-top: 20px;
+}
+
+.searchSection {
+    margin-top: 50px;
 }
