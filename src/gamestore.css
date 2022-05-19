@@ -26,6 +26,8 @@
     margin-right: 20px;
 }
 
+/* Front page css */
+
 .shop {
     margin-top: 15px;
 }
@@ -78,9 +80,14 @@
     margin-right: 15px;
 }
 
-.shirtTitle {
+.shirts {
     text-align: center;
     font-size: xx-large;
+}
+
+.shirtTitle {
+    text-decoration: none;
+    color: white;
 }
 
 .shirtSale {
@@ -98,26 +105,37 @@
     margin-top: 10px;
 }
 
-.restockForm {
+/* Create console css */
+
+.addTitle {
+    font-size: x-large;
+}
+
+.addForm {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
+    width: 20vw;
+    align-items: flex-end;
     justify-content: center;
-    align-items: center;
-    margin-top: 50px;
 }
 
-.itemSelect {
-    margin-right: 35px;
+.addConsoleForm label {
+    margin-bottom: 10px;
 }
 
-.restockForm a {
-    text-decoration: none;
-    color: white;
-    text-decoration: underline;
-    margin-top: 20px;
+.submit {
+    width: 50%;
 }
+
+
 
 .searchSection {
     margin-top: 50px;
+}
+
+
+
+.gameInventory {
+    margin-top: 20px;
 }

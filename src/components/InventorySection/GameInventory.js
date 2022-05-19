@@ -60,7 +60,7 @@ export default function GameInventory() {
         return <CreateGame game={scopedGame} notify={notify} />
     }
     return (
-        <div className="consoleInventory">
+        <div className="gameInventory">
             {error && <div className="alert alert-danger">{error}</div>}
             <div>
                 <h1 className="gamesTitle">Games</h1>

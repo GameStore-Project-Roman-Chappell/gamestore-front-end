@@ -47,7 +47,8 @@ export default function CreateShirt({ shirt: initialShirt, notify }) {
 
     return (
         <div className="CreateShirtForm">
-            <form onSubmit={handleSubmit}>
+            <p className="addTitle">Add a Shirt</p>
+            <form className="addForm" onSubmit={handleSubmit}>
                     <label className="sizeInput">
                         Size: 
                         <input type="text" name="size" value={shirt.size} onChange={handleChange} />

@@ -47,7 +47,8 @@ export default function CreateGame({ game: initialGame, notify }) {
 
     return (
         <div className="CreateGameForm">
-            <form onSubmit={handleSubmit}>
+            <p className="addTitle">Add a Game</p>
+            <form className="addForm" onSubmit={handleSubmit}>
                     <label className="titleInput">
                         Title: 
                         <input type="text" name="title" value={game.title} onChange={handleChange} />

@@ -47,7 +47,8 @@ export default function CreateConsole({ consoleB: initialConsole, notify }) {
 
     return (
         <div className="CreateConsoleForm">
-            <form onSubmit={handleSubmit}>
+            <p className="addTitle">Add a Console</p>
+            <form className="addForm" onSubmit={handleSubmit}>
                     <label className="modelInput">
                         Model: 
                         <input type="text" name="model" value={consoleB.model} onChange={handleChange} />
@@ -77,7 +78,7 @@ export default function CreateConsole({ consoleB: initialConsole, notify }) {
                         Quantity: 
                         <input type="text" name="quantity" value={consoleB.quantity} onChange={handleChange}></input>
                     </label>
-                    <input type='submit' value='Submit' />
+                    <input type='submit' value='Submit' className="submit"/>
             </form>
         </div>
     )
