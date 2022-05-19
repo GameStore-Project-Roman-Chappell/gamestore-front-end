@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import ConsoleSearch from '../SearchSections/ConsoleSearch';
 
 export default function ConsoleOrder() {
     const [consoleInventory, setConsoleInventory] = useState([]);
@@ -113,6 +114,9 @@ export default function ConsoleOrder() {
 
                 <input type='submit' value='Submit' />
             </form>
+
+            <ConsoleSearch />
+
             <a href='/'>Back to Home</a>
         </div>
     )
