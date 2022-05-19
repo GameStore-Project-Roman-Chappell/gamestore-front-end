@@ -77,10 +77,12 @@ export default function ShirtOrder() {
 
     return (
         <div className="shirtOrder">
-            <form className="shirtOrderForm" onSubmit={handleSubmit}>
-
+            <p className="orderTitle">Order a T-Shirt</p>
+            <form className="orderForm" onSubmit={handleSubmit}>
                 <label className="shirtOrderFormSelect">
+                    T-Shirt: 
                     <select onChange={handleChange}>
+                        <option></option>
                         {shirtInventory.map((shirtOption) => <option key={shirtOption.id} id={shirtOption.id} value={shirtOption.id}>
                             {shirtOption.description}
                             </option>)}

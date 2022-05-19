@@ -26,7 +26,7 @@
     margin-right: 20px;
 }
 
-/* Front page css */
+/* Front page CSS */
 
 .shop {
     margin-top: 15px;
@@ -105,7 +105,7 @@
     margin-top: 10px;
 }
 
-/* Create console css */
+/* Create Inventory Products CSS */
 
 .addTitle {
     font-size: x-large;
@@ -128,6 +128,25 @@
     width: 50%;
 }
 
+/* Order Page CSS */
+
+.orderTitle {
+    font-size: x-large;
+}
+
+.orderForm {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 20vw;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.orderForm label {
+    margin-bottom: 10px;
+    /* width: 50%; */
+}
 
 
 .searchSection {
