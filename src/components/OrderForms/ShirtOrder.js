@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import ShirtSearch from '../SearchSections/ShirtSearch';
 
 export default function ShirtOrder() {
     const [shirtInventory, setShirtInventory] = useState([]);
@@ -114,6 +115,8 @@ export default function ShirtOrder() {
 
                 <input type='submit' value='Submit' />
             </form>
+
+            <ShirtSearch />
         </div>
         
     )
