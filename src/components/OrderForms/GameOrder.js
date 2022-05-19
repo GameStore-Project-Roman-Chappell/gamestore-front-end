@@ -10,9 +10,7 @@ export default function GameOrder() {
   const [state2, setState2] = useState("");
   const [zipcode, setZipcode] = useState("");
   const [quantity, setQuantity] = useState(0);
-  const [gameOrder, setGameOrder] = useState({});
-  const [successful, setSuccessful] = useState(false);
-  const [invoice, setInvoice] = useState({});
+
 
 
   useEffect(() => {
@@ -26,7 +24,6 @@ export default function GameOrder() {
     let obj = event.target.value;
     let objInt = parseInt(obj);
     setGameId(objInt);
-    console.log(gameId);
   };
 
   const handleSubmit = (event) => {
@@ -41,7 +38,6 @@ export default function GameOrder() {
       itemId: gameId,
       quantity: parseInt(quantity),
     };
-    setGameOrder(orderInfo);
     console.log("submitting game order");
     console.log(orderInfo);
 
@@ -52,29 +48,24 @@ export default function GameOrder() {
       method,
       headers: {
         "Content-Type": "application/json",
-        Accept: "application/json",
+        "Accept": "application/json",
       },
-      body: JSON.stringify(gameOrder),
+      body: JSON.stringify(orderInfo),
     };
 
     fetch(url, init)
       .then((response) => {
         if (response.status === expectedStatus) {
           console.log(orderInfo);
-          setSuccessful(true);
           return response.json();
         }
         return Promise.reject(
           "Didn't receive expected status, ensure all inputs are filled."
         );
       })
-      .then((result) => setInvoice(result));
-    console.log(invoice);
+      .then((result) => {alert(`Purchase successful, your total is $${result.total}`);});
   };
-  if (successful) {
-    setSuccessful(false);
-    alert("Your purchase was successful");
-  }
+
 
   return (
     <div className='gameOrder'>

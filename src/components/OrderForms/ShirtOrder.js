@@ -3,8 +3,6 @@ import ShirtSearch from '../SearchSections/ShirtSearch';
 
 export default function ShirtOrder() {
     const [shirtInventory, setShirtInventory] = useState([]);
-    const [shirt, setShirt] = useState({});
-    const [error, setError] = useState();
     const [name, setName] = useState("");
     const [street, setStreet] = useState("");
     const [city, setCity] = useState("");
@@ -12,9 +10,6 @@ export default function ShirtOrder() {
     const [zipcode, setZipcode] = useState("");
     const [quantity, setQuantity] = useState(0);
     const [shirtId, setShirtId] = useState(0);
-    const [shirtOrder, setShirtOrder] = useState({});
-    const [successful, setSuccessful] = useState(false);
-    const [invoice, setInvoice] = useState({});
 
     useEffect(() => {
         fetch("http://localhost:8080/tshirts")
@@ -27,7 +22,6 @@ export default function ShirtOrder() {
         let obj = event.target.value;
         let objInt = parseInt(obj);
         setShirtId(objInt);
-        console.log(shirtId);
     }
 
     const handleSubmit = (event) => {
@@ -42,7 +36,6 @@ export default function ShirtOrder() {
             "itemId": shirtId,
             "quantity": parseInt(quantity)
         }
-        setShirtOrder(orderInfo);
         console.log("Submitting T-Shirt order");
         console.log(orderInfo);
         
@@ -55,25 +48,20 @@ export default function ShirtOrder() {
                 "Content-Type": "application/json",
                 "Accept": "application/json"
             },
-            body: JSON.stringify(shirtOrder)
+            body: JSON.stringify(orderInfo)
     }
+
 
     fetch(url, init)
     .then(response => {
         if (response.status === expectedStatus) {
             console.log(orderInfo);
-            setSuccessful(true);
             return response.json();
         }
         return Promise.reject("Didn't receive expected status, ensure all inputs are filled.")
     })
-    .then(result => setInvoice(result));
-    console.log(invoice);
-    }
-    if (successful) {
-        setSuccessful(false);
-        alert("Your purchse was successful")
-    }
+    .then(result =>{alert(`Purchase successful, your total is $${result.total}`);});
+}
 
     return (
         <div className="shirtOrder">

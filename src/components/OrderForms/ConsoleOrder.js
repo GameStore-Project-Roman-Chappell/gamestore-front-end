@@ -3,9 +3,7 @@ import ConsoleSearch from "../SearchSections/ConsoleSearch";
 
 export default function ConsoleOrder() {
   const [consoleInventory, setConsoleInventory] = useState([]);
-  const [consoleB, setConsoleB] = useState({});
   const [consoleId, setConsoleId] = useState(0);
-  const [consoleOrder, setConsoleOrder] = useState({});
   const [name, setName] = useState("");
   const [street, setStreet] = useState("");
   const [city, setCity] = useState("");
@@ -13,8 +11,6 @@ export default function ConsoleOrder() {
   const [zipcode, setZipcode] = useState("");
   const [quantity, setQuantity] = useState(0);
   const [invoice, setInvoice] = useState({});
-  const [error, setError] = useState();
-  const [successful, setSuccessful] = useState(false);
 
   useEffect(() => {
     fetch("http://localhost:8080/consoles")
@@ -30,7 +26,6 @@ export default function ConsoleOrder() {
     let obj = event.target.value;
     let objInt = parseInt(obj);
     setConsoleId(objInt);
-    console.log(obj);
   };
 
   const handleSubmit = (event) => {
@@ -44,10 +39,8 @@ export default function ConsoleOrder() {
       itemId: consoleId,
       quantity: parseInt(quantity),
     };
-    setConsoleOrder(orderInfo);
     event.preventDefault();
     console.log("submitting console");
-    console.log(consoleId);
     console.log(orderInfo);
 
     const url = "http://localhost:8080/purchase";
@@ -57,26 +50,23 @@ export default function ConsoleOrder() {
       method,
       headers: {
         "Content-Type": "application/json",
-        Accept: "application/json",
+        "Accept": "application/json",
       },
-      body: JSON.stringify(consoleOrder),
+      body: JSON.stringify(orderInfo),
     };
 
     fetch(url, init)
       .then((response) => {
         if (response.status === expectedStatus) {
           console.log(orderInfo);
-          setSuccessful(true);
           return response.json();
         }
         return Promise.reject("Didn't receive expected status");
       })
-      .then((result) => setInvoice(result));
+      .then((result) => {alert(`Purchase successful, your total is $${result.total}`);});
     console.log(invoice);
   };
-  if (successful) {
-    alert("Your purchase was successful");
-  }
+ 
   return (
     <div className='consoleOrder'>
       <p className='orderTitle'>Order a Console</p>
